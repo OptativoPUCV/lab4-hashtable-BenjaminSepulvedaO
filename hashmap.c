@@ -137,6 +137,8 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
   long i = map->current + 1;
   long primerIndex = i;
+  if (map == NULL)
+    return NULL;
   while (1)
     {
       if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
