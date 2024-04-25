@@ -146,7 +146,7 @@ Pair * nextMap(HashMap * map) {
         map->current = i;
         return map->buckets[i];
       }
-      i = (i + 1) % map->capacity;
+      i++;
       if (i == primerIndex)
       {
         return NULL;
