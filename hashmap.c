@@ -82,8 +82,6 @@ void eraseMap(HashMap * map,  char * key) {
   long primerIndex = pos;
   while (map->buckets[pos] != NULL)
     {
-      if (pos == primerIndex)
-        return;
       if (is_equal(map->buckets[pos]->key, key))
       {
         map->buckets[pos] = NULL;
@@ -93,6 +91,8 @@ void eraseMap(HashMap * map,  char * key) {
       pos++;
       if (pos == map->capacity)
         pos = 0;
+      if (pos == primerIndex)
+        return;
     }
 }
 
