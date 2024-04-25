@@ -139,10 +139,6 @@ Pair * nextMap(HashMap * map) {
   long primerIndex = i;
   while (1)
     {
-      if (i == map->capacity)
-      {
-        i = 0;
-      }
       if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
       {
         map->current = i;
@@ -152,6 +148,10 @@ Pair * nextMap(HashMap * map) {
       if (i == primerIndex)
       {
         return NULL;
+      }
+      if (i == map->capacity)
+      {
+        i = 0;
       }
     }
   return NULL;
