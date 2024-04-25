@@ -87,8 +87,8 @@ Pair * searchMap(HashMap * map,  char * key) {
   long primerIndex = pos;
   while (1)
     {
-        if (map->buckets[pos]==NULL)
-          return NULL;
+      if (map->buckets[pos]==NULL)
+        return NULL;
       if (strcmp(key, map->buckets[pos]->key) == 0)
       {
         map->current = pos;
@@ -98,7 +98,6 @@ Pair * searchMap(HashMap * map,  char * key) {
       if (pos == primerIndex)
         return NULL;
     }
-  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
