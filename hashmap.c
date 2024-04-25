@@ -94,7 +94,11 @@ Pair * searchMap(HashMap * map,  char * key) {
       if (pos == map->capacity)
         pos = 0;
       if (strcmp(key, map->buckets[pos]->key) == 0)
+      {
+        map->current = pos;
         return map->buckets[pos];
+      }
+        
     }
   return NULL;
 }
