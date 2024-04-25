@@ -151,7 +151,6 @@ Pair * nextMap(HashMap * map) {
       i++;
       if (i == primerIndex)
       {
-        map->current = -1;
         return NULL;
       }
     }
