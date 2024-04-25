@@ -144,14 +144,10 @@ Pair * nextMap(HashMap * map) {
         map->current = i;
         return map->buckets[i];
       }
-      i++;
+      i = (i + 1) % map->capacity;
       if (i == primerIndex)
       {
         return NULL;
-      }
-      if (i == map->capacity)
-      {
-        i = 0;
       }
     }
   return NULL;
