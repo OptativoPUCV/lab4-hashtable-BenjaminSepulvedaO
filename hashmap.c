@@ -136,7 +136,6 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
   long i = map->current + 1;
-  long primerIndex = i;
   if (map == NULL)
     return NULL;
   while (1)
@@ -147,7 +146,7 @@ Pair * nextMap(HashMap * map) {
         return map->buckets[i];
       }
       i++;
-      if (i == primerIndex)
+      if (i == map->capacity)
       {
         return NULL;
       }
