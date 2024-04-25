@@ -195,3 +195,28 @@ Thu 25 Apr 2024 10:14:14 PM UTC:
  tests:  16|1
 total_score: 60/70
 7d84bec
+Thu 25 Apr 2024 10:17:44 PM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:68:26: error: too few arguments to function ‘calloc’
+   68 |   map->buckets = (Pair**)calloc()
+      |                          ^~~~~~
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:543:14: note: declared here
+  543 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+In file included from test.c:4:
+hashmap.c:68:34: error: expected ‘;’ before ‘}’ token
+   68 |   map->buckets = (Pair**)calloc()
+      |                                  ^
+      |                                  ;
+   69 | }
+      | ~                                 
+hashmap.c:66:10: error: unused variable ‘old’ [-Werror=unused-variable]
+   66 |   Pair** old = map->buckets;
+      |          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+0289b0d
